@@ -40,8 +40,8 @@ layer {
     mean_value: 116.669
     mean_value: 122.675
     #crop_size: 1248
-    crop_width: 1536
-    crop_height: 1024
+    crop_width: 960
+    crop_height: 1280
     mirror: false
   }
   include: { phase: TEST }
@@ -1306,11 +1306,10 @@ layer {
   type: "BinaryPngWrite"
   bottom: "output_mask"
   binary_png_write_param {
-    prefix: "/media/Disk/yanpengxiang/exper/carvana/features/VGG/output_mask/"
+    prefix: "/media/Disk/yanpengxiang/exper/carvana/features/VGG/output_mask2/"
     source: "/home/yanpengxiang/deeplab-v2/exper/carvana/list/test2-2_id.txt"
     strip: 0
     period: 1
   }
   include: { phase: TEST }
 }
-

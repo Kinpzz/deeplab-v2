@@ -16,7 +16,7 @@
 #           161;          81;          41;          21;  11
 # 
 
-name: "${NET_ID}"
+name: "VGG"
 
 ### load data ###
 layer {
@@ -26,8 +26,8 @@ layer {
   #top: "label"
   #top: "data_dim"
   image_data_param {
-    root_folder: "${DATA_ROOT}"
-    source: "${EXP}/list/${TEST_SET}.txt"
+    root_folder: "/media/Disk/yanpengxiang/dataset/carvana/"
+    source: "/home/yanpengxiang/deeplab-v2/exper/carvana/list/test2-2-2.txt"
     # half
     batch_size: 1
     label_type: NONE
@@ -1304,8 +1304,8 @@ layer {
   type: "BinaryPngWrite"
   bottom: "output_mask"
   binary_png_write_param {
-    prefix: "${FEATURE_DIR}/output_mask2/"
-    source: "${EXP}/list/${TEST_SET}_id.txt"
+    prefix: "/media/Disk/yanpengxiang/exper/carvana/features/VGG/output_mask2/"
+    source: "/home/yanpengxiang/deeplab-v2/exper/carvana/list/test2-2-2_id.txt"
     strip: 0
     period: 1
   }

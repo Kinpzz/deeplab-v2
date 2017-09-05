@@ -101,7 +101,7 @@ fi
 ## Test #1 specification (on val or test)
 
 if [ ${RUN_TEST} -eq 1 ]; then
-  for TEST_SET in val; do
+  for TEST_SET in val2; do
     TEST_ITER=`cat ${EXP}/list/${TEST_SET}.txt | wc -l`
     cat ${EXP}/list/${TEST_SET}.txt
     MODEL=${EXP}/model/${NET_ID}/save/train_iter_${RESTORE_ITER}.caffemodel
@@ -115,7 +115,7 @@ if [ ${RUN_TEST} -eq 1 ]; then
     #mkdir -p ${FEATURE_DIR}/${TEST_SET}/fc8_softmax
     mkdir -p ${FEATURE_DIR}/${TEST_SET}/output_mask
     sed "$(eval echo $(cat sub.sed))" \
-		${CONFIG_DIR}/${TEST_SET}.prototxt > ${CONFIG_DIR}/test_${TEST_SET}.prototxt
+		${CONFIG_DIR}/val.prototxt > ${CONFIG_DIR}/test_${TEST_SET}.prototxt
 	CMD="${CAFFE_BIN} test \
         --model=${CONFIG_DIR}/test_${TEST_SET}.prototxt \
         --weights=${MODEL} \

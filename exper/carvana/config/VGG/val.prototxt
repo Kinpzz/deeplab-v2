@@ -29,8 +29,6 @@ layer {
     root_folder: "${DATA_ROOT}"
     source: "${EXP}/list/${TEST_SET}.txt"
     # half
-    new_height: 1024
-    new_width: 1536
     batch_size: 1
     label_type: NONE
     #label_type: PIXEL
@@ -40,8 +38,8 @@ layer {
     mean_value: 116.669
     mean_value: 122.675
     #crop_size: 1248
-    crop_width: 1536
-    crop_height: 1024
+    crop_width: 960
+    crop_height: 1280
     mirror: false
   }
   include: { phase: TEST }

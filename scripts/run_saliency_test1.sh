@@ -101,7 +101,7 @@ fi
 ## Test #1 specification (on val or test)
 
 if [ ${RUN_TEST} -eq 1 ]; then
-  for TEST_SET in test2-1; do
+  for TEST_SET in test2-2-1; do
     TEST_ITER=`cat ${EXP}/list/${TEST_SET}.txt | wc -l`
     cat ${EXP}/list/${TEST_SET}.txt
     MODEL=${EXP}/model/${NET_ID}/save/train_iter_${RESTORE_ITER}.caffemodel
@@ -113,7 +113,7 @@ if [ ${RUN_TEST} -eq 1 ]; then
     FEATURE_DIR=/media/Disk/yanpengxiang/exper/carvana/features/${NET_ID}
     #mkdir -p ${FEATURE_DIR}/${TEST_SET}/fc8
     #mkdir -p ${FEATURE_DIR}/${TEST_SET}/fc8_softmax
-    mkdir -p ${FEATURE_DIR}/output_mask
+    mkdir -p ${FEATURE_DIR}/output_mask2
     sed "$(eval echo $(cat sub.sed))" \
 		${CONFIG_DIR}/test.prototxt > ${CONFIG_DIR}/test_${TEST_SET}.prototxt
 	CMD="${CAFFE_BIN} test \
